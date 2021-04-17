@@ -1,0 +1,10 @@
+a = 8
+b = 5
+add = a + b #Addition
+sub = a - b #Subtraction
+div = a / b #Division
+mul = a * b #Multiplication
+exp = a ** b #Exponent (Power)
+mod = a % b #Modulus
+floo = a // b #Floor division
+print(add, sub, div, mul, exp, mod, floo, sep='\n')
