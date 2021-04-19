@@ -23,7 +23,7 @@ else:
 
 #3 variant 'ternar operator'
 
-phoneNum = input('''Type your phone number 
+phoneNum = int(input('''Type your phone number 
 (note: phone number must contain 10 digits, without alphabet symbols)
-:''')  # create a variable
-print('your phone number is: ' + phoneNum) if type(phoneNum == int) and len(phoneNum) == 10 else print('error: phone number is incorrect')
+:''')) # create a variable
+print('your phone number is: ', phoneNum) if type(phoneNum) == int and len(str(phoneNum)) == 10 else print('error: phone number is incorrect')
