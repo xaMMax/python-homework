@@ -3,7 +3,7 @@ compNumber = random.randint(1, 10)   # generate random number
 # print(compNumber)                   # some print 8)
 name = input('Please input your name ')  # input gamer name
 print('Hello ' + name + ' nise to see you in my game') if len(name) >= 1 and name != ' ' else print('Sorry but name cant be empty')  # ternar operator for check length of name and print it
-nameNumber = input('Can you guess my generated number? ')  # input gamers number
+nameNumber = input('Can you guess my generated number from 1 to 10? ')  # input gamers number
 print('Your number is : ', nameNumber)
 while True:
     if nameNumber.isdigit() and int(nameNumber) == compNumber:
