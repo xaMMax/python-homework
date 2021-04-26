@@ -1,10 +1,11 @@
 def stock_price():  # definition new function which take two dicts, and return total price of stock
     for key in stock:  # 'for' method for reading how many keys in our dict
-        result[key] = (stock[key] + prices[key])  # multiply our stock values on prices???
-    return result  # returns dictionary with total price
+        result[key] = (stock[key] * prices[key])  # multiply our stock values on prices???
+    result['Stock'] = sum(result.values())  # find summa of prices
+    return result # returns dictionary with total price
 
 
-result = {}  # create new empty dictionary
+result = {'Stock': 0}  # create new dictionary with summary stock price
 stock = {  # dictionary with stock of fruits
     "banana": 6,
     "apple": 0,
