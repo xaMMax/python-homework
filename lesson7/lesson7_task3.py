@@ -15,7 +15,6 @@ def make_operation(x='', *args):  # define the function called make_operation
         print(result)
     # subtraction
     elif x == '-':
-        args = list(args)
         result = reduce(sub, args)
         print(result)
     # if x not equal '*', '+', '-'
@@ -24,5 +23,5 @@ def make_operation(x='', *args):  # define the function called make_operation
     return   # return result of operations
 
 
-make_operation('-', 5, 6, 2)  # call the function
+make_operation('-', 5, 6, 2, -8)  # call the function
 
