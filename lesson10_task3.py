@@ -44,3 +44,4 @@ new_control = TVController(channels)
 # new_control.current_channel()
 new_control.is_exist('BBC')
 new_control.is_exist(4)
+
