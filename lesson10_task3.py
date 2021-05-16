@@ -1,26 +1,46 @@
-class TVController():
-    channel = ['BBC', 'Discovery', 'TV1000']
+channels = ['BBC', 'Discovery', 'TV1000']
 
-    def __init__(self, channel):
-        self.channel = channel
+class TVController():
+
+    def __init__(self, channels):
+        self.channels = channels
 
     def first_channel(self):
-        print(self.channel[0])
+        channel = channels[0]
+        print(channel)
 
     def last_channel(self):
-        return self.channel[2]
+        channel = channels[-1]
+        print(channel)
 
     def turn_channel(self, n):
-        return self.channel[n]
+        channel = channels[n-1]
+        print(channel)
+        return channel
 
     def next_channel(self):
-        return self.channel[:+1]
-    def previon_cannel(self):
-        return self.channel[-1:]
-    def current_channel(self):
-        pass
-    def is_exist(self, a):
-        pass
+        channel = channels
+        print(channel[1])
 
-new_control = TVController
-print(new_control.next_channel())
+    def previous_channel(self):
+        print(channels[0])
+
+    def current_channel(self):
+        print(channels[0])
+
+    def is_exist(self, a):
+        if a in channels:
+            print(channels.index(a), a)
+        else:
+            print('No')
+
+new_control = TVController(channels)
+#
+# new_control.first_channel()
+# new_control.last_channel()
+# new_control.turn_channel(1)
+# new_control.next_channel()
+# new_control.previous_channel()
+# new_control.current_channel()
+new_control.is_exist('BBC')
+new_control.is_exist(4)
