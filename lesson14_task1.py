@@ -1,7 +1,8 @@
 def logger(func):
-    def args(*args):
+    def arguments(*args):
         print(f'{func.__name__} called with {args}')
-    return args
+        return func(*args)
+    return arguments
 
 @logger
 def add(x, y):
@@ -12,6 +13,6 @@ def square_all(*args):
     return [arg**2 for arg in args]
 
 
-add(4,5)
+print(add(4,5))
 
-square_all(2,5,8,9)
+print(square_all(2,5,8,9))
