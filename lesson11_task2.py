@@ -1,21 +1,20 @@
 class Mathematician:
 
-    def __init__(self, num):
-        self.num = num
+    def __init__(self):
+        pass
+    @classmethod
+    def square_nums(cls, *args):
+        print(list(map(lambda x: pow(x, 2), args)))
+    @classmethod
+    def remove_positives(cls, *args):
+        print([i for i in args if i <= 0])
+    @classmethod
+    def filter_leaps(cls, *args):
+        print([i for i in args if i % 4 == 0])
 
-    def square_nums(self):
-        return list(map(lambda x: pow(x, 2), self.num))
+m = Mathematician
 
-    def remove_positives(self):
-        return [i for i in self.num if i <= 0]
+m.square_nums(7, 11, 5, 4)
+m.remove_positives(26, -11, -8, 13, -90)
+m.filter_leaps(2001, 1884, 1995, 2003, 2020)
 
-    def filter_leaps(self):
-        return [i for i in self.num if i % 4 == 0]
-
-
-m = Mathematician([7, 11, 5, 4])
-print(m.square_nums())
-mn = Mathematician([26, -11, -8, 13, -90])
-print(mn.remove_positives())
-nmn = Mathematician([2001, 1884, 1995, 2003, 2020])
-print(nmn.filter_leaps())
