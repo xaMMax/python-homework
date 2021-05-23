@@ -1,38 +1,34 @@
 def arg_rules(type_: type, max_length: int, contains: list):
     def decorator(func):
         def arguments(*args):
-            # if type(args[0]) is type_ and len(args[0]) < max_length and (args.count(cont) for cont in contains):
-            #     print(func(args[0]))
-            #     return func
-            # else:
-            #     print('Bad idea')
-            a = 0
-
-            if len(args[0]) < len(contains):
-                raise ValueError(f'Name must be more than {len(contains)} symbols')
-
-            if type(args[0]) is type_:
-                a += 1
-                # print(a)
-            elif a != 1:
-                print('Bad type')
-            if a == 1 and len(args[0]) <= max_length:
-                a += 1
-                # print(a)
-            else:
-                print('Bad length')
+            a = False
             sub = (args[0])
-            # print(f'slogan string is {sub}')
+            cont = str(contains).strip(',')
+###################################################################################
+            if type(sub) is not type_:
+                a = False
+                print(f'Type ERROR, string must be {type_}')
+                return a
+            else:
+                a = True
+###################################################################################
+            if max_length < len(sub):
+                a = False
+                print(f'Length ERROR, string must have {max_length} symbols length')
+                return a
+            else:
+                a = True
+###################################################################################
             for text in contains:
-                # print(f'first element in contains is {text}')
-                # print(f'Is first element = element in slogan str {text in args[0]}')
                 if text not in sub:
-                    print(f'Your string non validate with this arg: {text}')
+                    print(f'ERROR: Your string non validate with this arg: {text}')
+                    a = False
+                    return a
                 else:
-                    a += 1
-                    # print(f'if true a = + 1 = {a}')
-                    print(func(args[0]))
-                    return func
+                    continue
+            print(func(args[0]))
+####################################################################################
+            return func
         return arguments
     return decorator
 
@@ -41,9 +37,10 @@ def arg_rules(type_: type, max_length: int, contains: list):
 def create_slogan(name: str) -> str:
     return f"{name} drinks pepsi in his brand new BMW!"
 
-
-create_slogan('05W')
-
 create_slogan('S@SH05')
-
+create_slogan('ncvhf05n@d')
+create_slogan('fcvb0v5v@')
+create_slogan('05W')
 create_slogan('sdggfhj')
+create_slogan({'kjbfbv05@j'})
+create_slogan('kjnxifui05@kjnkfngdg')
