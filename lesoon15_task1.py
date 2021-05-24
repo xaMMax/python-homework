@@ -1,19 +1,38 @@
 from re import *
+
+def decorator_for_email_class(cls):
+        def validate(*args):
+            print(args[0])
+            pattern = compile('(^|\s)[-a-z0-9_.]+@([-a-z0-9]+\.)+[a-z]{2,6}(\s|$)')
+            is_valid = pattern.match(str(args[0]))
+            if is_valid:
+                print('правильный email:', is_valid.group())
+                            # объект is_valid содержит 3 метода
+                        # print('методы: start:', is_valid.start(), 'end:', is_valid.end(), 'group:', is_valid.group())
+            else:
+                print('неверный email! введите email...\n')
+            return cls(*args)
+        return validate
+
+
+@decorator_for_email_class
 class EmailValid:
-    def __init__(self, *args):
-        self.validate(*args)
+    def __init__(self, email):
+        self.email = email
 
-    def validate(*args):
-        pattern = compile('(^|\s)[-a-z0-9_.]+@([-a-z0-9]+\.)+[a-z]{2,6}(\s|$)')
-        address = input('inter you email address:')
-        is_valid = pattern.match(address)
-        if is_valid:
-            print('правильный email:', is_valid.group())
-                # объект is_valid содержит 3 метода
-            # print('методы: start:', is_valid.start(), 'end:', is_valid.end(), 'group:', is_valid.group())
-        else:
-            print('неверный email! введите email...\n')
+    # def validate(*args):
+    #     pattern = compile('(^|\s)[-a-z0-9_.]+@([-a-z0-9]+\.)+[a-z]{2,6}(\s|$)')
+    #     address = input('inter you email address:')
+    #     is_valid = pattern.match(address)
+    #     if is_valid:
+    #         print('правильный email:', is_valid.group())
+    #             # объект is_valid содержит 3 метода
+    #         # print('методы: start:', is_valid.start(), 'end:', is_valid.end(), 'group:', is_valid.group())
+    #     else:
+    #         print('неверный email! введите email...\n')
 
+newmail = EmailValid('asfsdf@gmail.com')
 
+print(newmail.email)
 
-new_mail = EmailValid()
+newmail2 = EmailValid('dfgdgdrgeg2@@@')
