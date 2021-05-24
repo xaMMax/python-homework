@@ -26,4 +26,3 @@ newmail = EmailValid('asfsdf@gmail.com')
 print(newmail.email)
 
 newmail2 = EmailValid('dfgdgdrgeg2@@@')
-
