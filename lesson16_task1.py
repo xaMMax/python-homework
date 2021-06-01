@@ -1,9 +1,21 @@
-def with_index(iterable, start=0):
-    for x in iterable:
-        start = start + 1
-        print(x, start)
+class WithIndex:
+    def __init__(self, iterable, start = 0):
+        self.iterable = iterable
+        self.start = start
+
+    def __iter__(self):
+        return self
+
+    def __next__(self):
+        if self.start < len(self.iterable):
+            i = self.iterable[self.start]
+            self.start += 1
+            return self.start-1, i
+        else:
+            raise StopIteration
 
 
 spisok = ['a', 'b', 'c', 'd', 'e', 'f']
-
-with_index(spisok, 0)
+withindex = WithIndex
+for i in withindex(spisok):
+    print(i)
