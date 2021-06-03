@@ -1,4 +1,4 @@
-from lesson18_tack1_catalog.some_function import this_some_func_for_import
+from lesson18_task1_catalog.some_function import this_some_func_for_import
 
 
 def string_sumator():
