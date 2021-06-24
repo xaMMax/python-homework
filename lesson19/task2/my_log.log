@@ -1,0 +1,2 @@
+DEBUG:root:Wed Jun 23 21:29:31 2021, Opened the <_io.TextIOWrapper name='test.txt' mode='a' encoding='UTF-8'>, open counter = 1 times
+DEBUG:root:Wed Jun 23 21:29:31 2021, Closed the <_io.TextIOWrapper name='test.txt' mode='a' encoding='UTF-8'>, close counter = 1 times
