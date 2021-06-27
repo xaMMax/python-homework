@@ -28,6 +28,6 @@ class ConMan:
         self.f.close()
 
 
-# with ConMan('test.txt', 'a') as f:
-#     f.write('append this some phrases\n')
+with ConMan('test.txt', 'a') as f:
+    f.write('append this some phrases\n')
 
