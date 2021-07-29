@@ -3,7 +3,7 @@
 
 
 
-# 3 - n^2
+# 1 - n
 def question1(first_list: list[int], second_list: list[int]) -> list[int]:
     res: list[int] = []
     for el_first_list in first_list:
@@ -11,13 +11,13 @@ def question1(first_list: list[int], second_list: list[int]) -> list[int]:
             res.append(el_first_list)
     return res
 
-# 1 - n
+# 2 - 1
 def question2(n: int) -> int:
     for _ in range(10):
         n **= 3
     return n
 
-# 5 - n^2
+# 3 - n^2
 def question3(first_list: list[int], second_list: list[int]) -> list[int]:
     temp: list[int] = first_list[:]
     for el_second_list in second_list:
@@ -30,7 +30,7 @@ def question3(first_list: list[int], second_list: list[int]) -> list[int]:
             temp.append(second_list)
     return temp
 
-# 6 - log n
+# 4 - n
 def question4(input_list: list[int]) -> int:
     res: int = 0
     for el in input_list:
@@ -38,7 +38,7 @@ def question4(input_list: list[int]) -> int:
             res = el
     return res
 
-# 4 - n
+# 5 - n^2
 def question5(n: int) -> list[tuple[int, int]]:
     res: list[tuple[int, int]] = []
     for i in range(n):
@@ -46,7 +46,7 @@ def question5(n: int) -> list[tuple[int, int]]:
             res.append((i, j))
     return res
 
-# 2 - 1
+# 6 - log n
 def question6(n: int) -> int:
     while n > 1:
         n /= 2
