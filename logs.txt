@@ -1,0 +1,2 @@
+ERROR:root:number 2 is too less 
+NoneType: None
