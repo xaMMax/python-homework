@@ -1,4 +1,5 @@
 # Words combination
+
 import random
 
 your_string = input("type your string here ")
